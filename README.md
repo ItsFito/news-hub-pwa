@@ -246,7 +246,7 @@ Untuk menambah fitur atau perbaikan:
 Untuk pertanyaan atau issue:
 
 - Buat GitHub Issue
-- Contact: azzam@example.com
+- Contact: azzamfatih@students.undip.ac.id
 
 ---
 
