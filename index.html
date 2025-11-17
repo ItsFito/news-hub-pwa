@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2196F3" />
+    <meta name="description" content="Aplikasi PWA untuk Manajemen Berita dan Artikel" />
+    <title>News Hub - Progressive Web App</title>
+    <link rel="manifest" href="manifest.json" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%232196F3' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dy='.3em'>N</text></svg>"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%232196F3' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dy='.3em'>N</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <h1>📰 News Hub</h1>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#/" class="nav-link active" data-page="home">Beranda</a></li>
+          <li><a href="#/articles" class="nav-link" data-page="articles">Artikel</a></li>
+          <li><a href="#/categories" class="nav-link" data-page="categories">Kategori</a></li>
+          <li><a href="#/profile" class="nav-link" data-page="profile">Profil</a></li>
+        </ul>
+        <button class="install-btn" id="installBtn" style="display: none">⬇️ Install Aplikasi</button>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content" id="mainContent">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+          <section class="hero">
+            <h2>Selamat Datang di News Hub</h2>
+            <p>Aplikasi PWA untuk membaca berita dan artikel terkini</p>
+            <p class="info-text">Aplikasi ini dapat diinstal dan digunakan secara offline</p>
+          </section>
+
+          <section class="featured-news">
+            <h3>Berita Unggulan</h3>
+            <div class="news-grid">
+              <article class="news-card">
+                <div class="news-image">🚀</div>
+                <h4>Teknologi AI Terbaru</h4>
+                <p>Perkembangan teknologi artificial intelligence mencapai milestone baru dengan model generatif yang lebih canggih.</p>
+                <span class="date">17 Nov 2025</span>
+              </article>
+              <article class="news-card">
+                <div class="news-image">🌍</div>
+                <h4>Perubahan Iklim Global</h4>
+                <p>Para ahli mengungkapkan penemuan penting mengenai dampak perubahan iklim terhadap ekosistem laut.</p>
+                <span class="date">16 Nov 2025</span>
+              </article>
+              <article class="news-card">
+                <div class="news-image">💻</div>
+                <h4>Web Development Trends</h4>
+                <p>Tren terbaru dalam pengembangan web menunjukkan peningkatan adopsi Progressive Web Apps di berbagai industri.</p>
+                <span class="date">15 Nov 2025</span>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <!-- Articles Page -->
+        <div id="articles-page" class="page">
+          <h2>Daftar Artikel</h2>
+          <div class="articles-list">
+            <article class="article-item">
+              <h3>Panduan Lengkap Progressive Web Apps</h3>
+              <p class="article-meta">Dipublikasikan: 10 Nov 2025 | Kategori: Teknologi</p>
+              <p>Progressive Web Apps merupakan solusi modern yang menggabungkan keunggulan aplikasi web dan native. Artikel ini menjelaskan konsep dasar, keuntungan, dan cara implementasi PWA yang tepat untuk proyek Anda.</p>
+            </article>
+
+            <article class="article-item">
+              <h3>Service Worker: Fondasi PWA yang Kuat</h3>
+              <p class="article-meta">Dipublikasikan: 8 Nov 2025 | Kategori: Teknologi</p>
+              <p>Service Worker adalah teknologi inti yang memungkinkan PWA bekerja offline. Pelajari cara kerja Service Worker, caching strategy, dan best practices dalam implementasinya untuk aplikasi web modern.</p>
+            </article>
+
+            <article class="article-item">
+              <h3>Web Manifest untuk PWA Installation</h3>
+              <p class="article-meta">Dipublikasikan: 5 Nov 2025 | Kategori: Teknologi</p>
+              <p>File manifest.json adalah file konfigurasi penting untuk PWA. Artikel ini menjelaskan struktur lengkap manifest, cara konfigurasi yang benar, dan bagaimana hal ini mempengaruhi experience pengguna saat menginstal PWA.</p>
+            </article>
+
+            <article class="article-item">
+              <h3>Responsive Design dan Mobile-First</h3>
+              <p class="article-meta">Dipublikasikan: 1 Nov 2025 | Kategori: Design</p>
+              <p>
+                Responsive design adalah kunci kesuksesan PWA di era mobile. Pelajari strategi mobile-first, media queries, dan teknik layout modern seperti CSS Grid dan Flexbox untuk membangun antarmuka yang sempurna di semua perangkat.
+              </p>
+            </article>
+
+            <article class="article-item">
+              <h3>Optimasi Performance PWA</h3>
+              <p class="article-meta">Dipublikasikan: 28 Oct 2025 | Kategori: Performance</p>
+              <p>
+                Performance adalah faktor kritis dalam kesuksesan PWA. Artikel ini membahas teknik optimasi seperti lazy loading, code splitting, compression, dan monitoring untuk memastikan aplikasi Anda berjalan dengan cepat dan efisien.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Categories Page -->
+        <div id="categories-page" class="page">
+          <h2>Kategori Konten</h2>
+          <div class="categories-grid">
+            <div class="category-card">
+              <div class="category-icon">💻</div>
+              <h3>Teknologi</h3>
+              <p>Perkembangan teknologi terkini, inovasi, dan tren di dunia digital</p>
+              <span class="article-count">12 artikel</span>
+            </div>
+            <div class="category-card">
+              <div class="category-icon">🎨</div>
+              <h3>Design</h3>
+              <p>UI/UX Design, graphic design, dan tren desain modern</p>
+              <span class="article-count">8 artikel</span>
+            </div>
+            <div class="category-card">
+              <div class="category-icon">⚡</div>
+              <h3>Performance</h3>
+              <p>Optimasi web, best practices, dan teknik peningkatan performa</p>
+              <span class="article-count">10 artikel</span>
+            </div>
+            <div class="category-card">
+              <div class="category-icon">📱</div>
+              <h3>Mobile</h3>
+              <p>Pengembangan mobile, responsive design, dan mobile first approach</p>
+              <span class="article-count">9 artikel</span>
+            </div>
+            <div class="category-card">
+              <div class="category-icon">🔒</div>
+              <h3>Security</h3>
+              <p>Keamanan web, enkripsi, dan perlindungan data pengguna</p>
+              <span class="article-count">6 artikel</span>
+            </div>
+            <div class="category-card">
+              <div class="category-icon">🌐</div>
+              <h3>Web Standards</h3>
+              <p>HTML5, CSS3, JavaScript ES6+, dan standar web terbaru</p>
+              <span class="article-count">11 artikel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profile-page" class="page">
+          <div class="profile-container">
+            <div class="profile-header">
+              <div class="profile-avatar">👨‍💻</div>
+              <h2>Profil Pengembang</h2>
+            </div>
+
+            <div class="profile-info">
+              <div class="info-group">
+                <label>Nama Lengkap:</label>
+                <p>Abdullah Fatih Azzam</p>
+              </div>
+              <div class="info-group">
+                <label>Nomor Induk Mahasiswa:</label>
+                <p>21120123140118</p>
+              </div>
+              <div class="info-group">
+                <label>Kelompok:</label>
+                <p>Kelompok 28 - Web Development</p>
+              </div>
+              <div class="info-group">
+                <label>Program Studi:</label>
+                <p>Teknik Komputer</p>
+              </div>
+              <div class="info-group">
+                <label>Institusi:</label>
+                <p>Universitas Diponegoro</p>
+              </div>
+            </div>
+
+            <div class="profile-about">
+              <h3>Tentang Aplikasi</h3>
+              <p>Aplikasi ini adalah Progressive Web App (PWA) yang dibangun menggunakan HTML5, CSS3, dan JavaScript. Aplikasi ini mendemonstrasikan fitur-fitur PWA modern termasuk:</p>
+              <ul>
+                <li>✅ Responsive design untuk semua perangkat</li>
+                <li>✅ Service Worker untuk offline functionality</li>
+                <li>✅ Web App Manifest untuk installable app</li>
+                <li>✅ Caching strategy untuk performa optimal</li>
+                <li>✅ Multiple pages navigation</li>
+                <li>✅ Static data presentation</li>
+              </ul>
+            </div>
+
+            <div class="profile-footer">
+              <p class="version">News Hub PWA v1.0</p>
+              <p class="timestamp">Dibuat: November 2025</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2025 News Hub PWA. Semua hak dilindungi. | Dibangun dengan HTML5, CSS3 & JavaScript</p>
+        <p class="offline-status" id="offlineStatus" style="display: none">⚠️ Mode Offline - Aplikasi bekerja tanpa koneksi internet</p>
+      </footer>
+    </div>
+
+    <script>
+      // Register Service Worker
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("sw.js")
+          .then((registration) => {
+            console.log("Service Worker registered:", registration);
+          })
+          .catch((error) => {
+            console.log("Service Worker registration failed:", error);
+          });
+      }
+
+      // Install button functionality
+      let deferredPrompt;
+      const installBtn = document.getElementById("installBtn");
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.style.display = "inline-block";
+      });
+
+      installBtn.addEventListener("click", async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          console.log(`User response to the install prompt: ${outcome}`);
+          deferredPrompt = null;
+          installBtn.style.display = "none";
+        }
+      });
+
+      // Page Navigation
+      const navLinks = document.querySelectorAll(".nav-link");
+      const pages = document.querySelectorAll(".page");
+
+      function navigateTo(pageId) {
+        // Hide all pages
+        pages.forEach((page) => page.classList.remove("active"));
+
+        // Remove active class from all nav links
+        navLinks.forEach((link) => link.classList.remove("active"));
+
+        // Show selected page
+        const selectedPage = document.getElementById(pageId + "-page");
+        if (selectedPage) {
+          selectedPage.classList.add("active");
+        }
+
+        // Add active class to clicked nav link
+        const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+
+        // Update URL hash
+        window.location.hash = pageId === "home" ? "#/" : "#/" + pageId;
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const pageId = link.getAttribute("data-page");
+          navigateTo(pageId);
+        });
+      });
+
+      // Handle browser back/forward buttons
+      window.addEventListener("hashchange", () => {
+        const hash = window.location.hash.slice(2) || "home";
+        navigateTo(hash);
+      });
+
+      // Initial page load
+      const initialHash = window.location.hash.slice(2) || "home";
+      navigateTo(initialHash);
+
+      // Online/Offline status
+      window.addEventListener("online", () => {
+        document.getElementById("offlineStatus").style.display = "none";
+      });
+
+      window.addEventListener("offline", () => {
+        document.getElementById("offlineStatus").style.display = "block";
+      });
+
+      // Check initial online status
+      if (!navigator.onLine) {
+        document.getElementById("offlineStatus").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

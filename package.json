@@ -1,0 +1,28 @@
+{
+  "name": "news-hub-pwa",
+  "version": "1.0.0",
+  "description": "Progressive Web App untuk membaca berita dan artikel dengan offline functionality",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Build completed'",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "pwa",
+    "progressive-web-app",
+    "news",
+    "offline",
+    "service-worker",
+    "web-app"
+  ],
+  "author": "Muhammad Azzam Ridho",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azzamridho/news-hub-pwa"
+  }
+}
