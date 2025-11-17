@@ -1,9 +1,7 @@
 {
   "buildCommand": "echo 'PWA ready for deployment'",
   "outputDirectory": ".",
-  "public": true,
   "env": {},
-  "functions": {},
   "redirects": [
     {
       "source": "/",
